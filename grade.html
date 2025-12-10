@@ -1,0 +1,97 @@
+<html>
+
+<head>
+    <title>Student Grade Tracker</title>
+    <link rel="stylesheet" href="grade.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Student Grade Tracker</h1>
+        
+        <button id="addStudentBtn">Add New Student</button>
+        <button id="calculateAvgBtn">Calculate Class Average</button>
+        <button id="highlightTopBtn">Highlight Top Performers</button>
+        
+        <div id="studentForm" class="hidden">
+            <h2>Add/Edit Student</h2>
+            <form id="gradeForm">
+                <div class="form-group">
+                    <label for="studentName">Student Name:</label>
+                    <input type="text" id="studentName" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="mathGrade">Math Grade:</label>
+                    <input type="number" id="mathGrade" min="0" max="100" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="scienceGrade">Science Grade:</label>
+                    <input type="number" id="scienceGrade" min="0" max="100" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="englishGrade">English Grade:</label>
+                    <input type="number" id="englishGrade" min="0" max="100" required>
+                </div>
+                
+                <button type="submit">Save</button>
+                <button type="button" id="cancelBtn">Cancel</button>
+            </form>
+        </div>
+        
+        <h2>Student Grades</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Math</th>
+                    <th>Science</th>
+                    <th>English</th>
+                    <th>Average</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="gradeTableBody">
+                <template id="studentRowTemplate">
+                    <tr>
+                        <td class="student-name"></td>
+                        <td class="student-math"></td>
+                        <td class="student-science"></td>
+                        <td class="student-english"></td>
+                        <td class="student-average"></td>
+                        <td class="student-actions">
+                            <button class="btn btn-edit">Edit</button>
+                            <button class="btn btn-delete">Delete</button>
+                        </td>
+                    </tr>
+                </template>
+            </tbody>
+        </table>
+        
+        <h2>Class Statistics</h2>
+        <div id="summaryStats" class="summary-container">
+            <template id="statsTemplate">
+                <div class="stat-card">
+                    <h3>Math Average</h3>
+                    <p class="math-avg"></p>
+                </div>
+                <div class="stat-card">
+                    <h3>Science Average</h3>
+                    <p class="science-avg"></p>
+                </div>
+                <div class="stat-card">
+                    <h3>English Average</h3>
+                    <p class="english-avg"></p>
+                </div>
+                <div class="stat-card">
+                    <h3>Overall Average</h3>
+                    <p class="overall-avg"></p>
+                </div>
+            </template>
+        </div>
+    </div>
+
+    <script src="grade.js"></script>
+</body>
+</html>
